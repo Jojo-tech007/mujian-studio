@@ -6,6 +6,7 @@ on:
       - 'mujian-preview.zip'
       - 'mujian-preview.zip.zip'
       - '.github/workflows/pages.yml'
+      - 'theme-green.css'
   workflow_dispatch:
 
 permissions:
@@ -36,6 +37,9 @@ jobs:
           test -n "$entry" || { echo "No index.html in zip"; exit 1; }
           root=$(dirname "$entry")
           cp -a "$root"/. _site/
+          cp theme-green.css _site/theme-green.css
+          sed -i 's#</head>#<link rel="stylesheet" href="theme-green.css"></head>#' _site/index.html
+          sed -i "s/mujian-theme-v02/mujian-theme-v03/g" _site/app.js
           touch _site/.nojekyll
           test -f _site/index.html
       - uses: actions/configure-pages@v5
