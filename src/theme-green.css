@@ -142,3 +142,192 @@
   :root[data-theme="light"] .brief-card,
   :root[data-theme="light"] .compass-panel {box-shadow:0 3px 14px rgba(28,62,42,.04)}
 }
+
+/* v0.5 — unified light reading surfaces for ALL application stages.
+   Artwork/illustration frames keep their intentionally dark cinematic imagery. */
+:root[data-theme="light"] {
+  --read-ink:#26372b;--read-secondary:#465e4f;--read-border:#d7e2da;
+}
+:root[data-theme="light"] .idea-card,
+:root[data-theme="light"] .analysis-panel,
+:root[data-theme="light"] .character-card,
+:root[data-theme="light"] .shot-card,
+:root[data-theme="light"] .manifest-hero,
+:root[data-theme="light"] .manifest-overview,
+:root[data-theme="light"] .risk-card,
+:root[data-theme="light"] .delivery-card {
+  background:#fff;
+  border:1px solid var(--read-border);
+  color:var(--read-ink);
+  box-shadow:0 5px 22px rgba(31,66,43,.045);
+}
+:root[data-theme="light"] .idea-card:hover,
+:root[data-theme="light"] .shot-card:hover {box-shadow:0 12px 30px rgba(31,66,43,.1)}
+:root[data-theme="light"] .idea-card.is-selected {border:2px solid #3f7853;background:#f7fbf7}
+:root[data-theme="light"] .idea-body {background:#fff;color:var(--read-ink)}
+:root[data-theme="light"] .idea-card.is-selected .idea-body {background:#f7fbf7}
+:root[data-theme="light"] .idea-title,
+:root[data-theme="light"] .outline-title h1,
+:root[data-theme="light"] .stage-head h1,
+:root[data-theme="light"] .production-title h1 {
+  color:#1c3224;font-weight:600;letter-spacing:.005em;line-height:1.3;
+}
+:root[data-theme="light"] .idea-title {font-size:clamp(23px,2.2vw,29px)}
+:root[data-theme="light"] .idea-logline,
+:root[data-theme="light"] .idea-hook,
+:root[data-theme="light"] .analysis-row dd,
+:root[data-theme="light"] .outline-logline,
+:root[data-theme="light"] .production-logline,
+:root[data-theme="light"] .screenplay-action,
+:root[data-theme="light"] .screenplay-dialogue p,
+:root[data-theme="light"] .character-quote,
+:root[data-theme="light"] .shot-desc,
+:root[data-theme="light"] .shot-dialogue p,
+:root[data-theme="light"] .manifest-hero-copy p,
+:root[data-theme="light"] .risk-card li,
+:root[data-theme="light"] .analysis-copy,
+:root[data-theme="light"] .scene-main p,
+:root[data-theme="light"] .scene-detail dd {
+  color:#385242;font-size:clamp(14px,1.1vw,16px);line-height:1.8;letter-spacing:normal;
+}
+:root[data-theme="light"] .analysis-box,
+:root[data-theme="light"] .voice-card,
+:root[data-theme="light"] .metric-cell,
+:root[data-theme="light"] .growth-card,
+:root[data-theme="light"] .theme-card,
+:root[data-theme="light"] .diag-block,
+:root[data-theme="light"] .suggestion,
+:root[data-theme="light"] .char-fact,
+:root[data-theme="light"] .character-design-grid > div,
+:root[data-theme="light"] .script-rail,
+:root[data-theme="light"] .script-stats,
+:root[data-theme="light"] .manifest-panel,
+:root[data-theme="light"] .production-kpi,
+:root[data-theme="light"] .scene-detail {
+  background:#f7faf7;border-color:var(--read-border);color:var(--read-ink);
+}
+:root[data-theme="light"] .analysis-row,
+:root[data-theme="light"] .manifest-panel li,
+:root[data-theme="light"] .script-index-item {border-color:var(--read-border)}
+:root[data-theme="light"] .analysis-row dt,
+:root[data-theme="light"] .score-label,
+:root[data-theme="light"] .idea-meta,
+:root[data-theme="light"] .production-tagline,
+:root[data-theme="light"] .scene-meta,
+:root[data-theme="light"] .manifest-panel li span,
+:root[data-theme="light"] .shot-meta,
+:root[data-theme="light"] .shot-tech,
+:root[data-theme="light"] .voice-facts span,
+:root[data-theme="light"] .character-design-grid span,
+:root[data-theme="light"] .kpi-label {
+  color:#4d6655;font-size:13px;line-height:1.6;
+}
+:root[data-theme="light"] .analysis-row dd,
+:root[data-theme="light"] .analysis-row.is-risk dd,
+:root[data-theme="light"] .score-label b,
+:root[data-theme="light"] .pick-hint,
+:root[data-theme="light"] .idea-footer,
+:root[data-theme="light"] .scene-main h3,
+:root[data-theme="light"] .act-title-wrap h2,
+:root[data-theme="light"] .section-heading,
+:root[data-theme="light"] .core-title,
+:root[data-theme="light"] .analysis-sub h4,
+:root[data-theme="light"] .character-name-row h2,
+:root[data-theme="light"] .shot-body h3,
+:root[data-theme="light"] .manifest-panel h3,
+:root[data-theme="light"] .manifest-panel li b,
+:root[data-theme="light"] .manifest-stat strong,
+:root[data-theme="light"] .production-kpi strong,
+:root[data-theme="light"] .script-index-item .si-main b,
+:root[data-theme="light"] .screenplay-heading h3 {
+  color:#243e2d;
+}
+:root[data-theme="light"] .analysis-row dt,
+:root[data-theme="light"] .score-label,
+:root[data-theme="light"] .idea-meta .tag,
+:root[data-theme="light"] .analysis-flag,
+:root[data-theme="light"] .pick-hint,
+:root[data-theme="light"] .shot-tags .tag {font-size:12px;font-weight:600}
+:root[data-theme="light"] .tag,
+:root[data-theme="light"] .filter-chip,
+:root[data-theme="light"] .character-keywords span {
+  background:#edf4ee;color:#315b3e;border-color:#d2e1d6;
+}
+:root[data-theme="light"] .tag.is-amber,
+:root[data-theme="light"] .tag.is-sage {background:#e8f2ea;color:#275947}
+:root[data-theme="light"] .analysis-tab,
+:root[data-theme="light"] .production-tab,
+:root[data-theme="light"] .filter-chip {color:#435e4b;font-weight:600}
+:root[data-theme="light"] .analysis-tab.is-active,
+:root[data-theme="light"] .production-tab.is-active,
+:root[data-theme="light"] .filter-chip.is-active,
+:root[data-theme="light"] .script-index-item.is-active {color:#194b30;background:#e9f3eb}
+:root[data-theme="light"] .analysis-head,
+:root[data-theme="light"] .analysis-tabs,
+:root[data-theme="light"] .scene-summary,
+:root[data-theme="light"] .act-head,
+:root[data-theme="light"] .storyboard-scene-head,
+:root[data-theme="light"] .manifest-panel header,
+:root[data-theme="light"] .script-cover {
+  background:#fff;color:var(--read-ink);border-color:var(--read-border);
+}
+:root[data-theme="light"] .act,
+:root[data-theme="light"] .scene,
+:root[data-theme="light"] .screenplay,
+:root[data-theme="light"] .storyboard-scene,
+:root[data-theme="light"] .screenplay-scene {
+  background:#fff;color:var(--read-ink);border-color:var(--read-border);
+}
+:root[data-theme="light"] .screenplay {box-shadow:0 5px 20px rgba(33,69,48,.04)}
+:root[data-theme="light"] .screenplay-dialogue,
+:root[data-theme="light"] .screenplay-heading p,
+:root[data-theme="light"] .scene-detail dt,
+:root[data-theme="light"] .cast-intro > p,
+:root[data-theme="light"] .character-design-grid p,
+:root[data-theme="light"] .voice-facts p,
+:root[data-theme="light"] .shot-dialogue,
+:root[data-theme="light"] .manifest-format p,
+:root[data-theme="light"] .manifest-stat small,
+:root[data-theme="light"] .char-fact dd,
+:root[data-theme="light"] .analysis-sub p,
+:root[data-theme="light"] .diag-block li {
+  color:#415b49;line-height:1.7;
+}
+:root[data-theme="light"] .screenplay-action,
+:root[data-theme="light"] .screenplay-dialogue p {font-size:16px;line-height:1.9}
+:root[data-theme="light"] .script-body {background:#fff}
+:root[data-theme="light"] .script-index-item:hover,
+:root[data-theme="light"] .filter-chip:hover {background:#edf5ef}
+:root[data-theme="light"] .voice-card.is-speaking {background:#e7f2ea;border-color:#6e9e79}
+:root[data-theme="light"] .voice-play,
+:root[data-theme="light"] .rail-export {color:#275947;border-color:#b8d1bf}
+:root[data-theme="light"] .manifest-hero {background:#f2f8f3}
+:root[data-theme="light"] .manifest-overview {background:#fff}
+:root[data-theme="light"] .manifest-stat,
+:root[data-theme="light"] .manifest-panel li {background:transparent;border-color:#e1e8e2}
+:root[data-theme="light"] .risk-card {background:#fffaf6}
+:root[data-theme="light"] .delivery-card {background:#f4faf5}
+:root[data-theme="light"] .primary-btn,
+:root[data-theme="light"] .dock-cta {background:#275947;color:#fff;border-color:#275947;font-size:14px;font-weight:650}
+:root[data-theme="light"] .primary-btn:hover,
+:root[data-theme="light"] .dock-cta:hover {background:#1d4635;color:#fff}
+:root[data-theme="light"] .ghost-btn,
+:root[data-theme="light"] .text-btn {color:#275947;font-size:14px;font-weight:600;border-color:#c7d7cb}
+:root[data-theme="light"] .prototype-disclosure {font-size:14px;color:#405b48;background:#f5f9f5}
+:root[data-theme="light"] .score-track {background:#dfe9e1}
+:root[data-theme="light"] .score-track i {background:#437c58}
+:root[data-theme="light"] .score-item:nth-child(2) .score-track i {background:#6a9977}
+:root[data-theme="light"] .score-item:nth-child(3) .score-track i {background:#829c8a}
+:root[data-theme="light"] .selection-dock,
+:root[data-theme="light"] .modal-card,
+:root[data-theme="light"] .process-card {background:#fff;color:#263c2d;border-color:#cfded3}
+:root[data-theme="light"] .process-overlay,
+:root[data-theme="light"] .modal-layer {color:#263c2d}
+:root[data-theme="light"] .site-footer {color:#506657}
+@media(max-width:700px){
+  :root[data-theme="light"] .idea-title {font-size:23px}
+  :root[data-theme="light"] .idea-logline,
+  :root[data-theme="light"] .scene-main p,
+  :root[data-theme="light"] .shot-desc {font-size:14px;line-height:1.7}
+  :root[data-theme="light"] .screenplay-dialogue p {font-size:15px}
+}
