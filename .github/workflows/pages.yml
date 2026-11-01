@@ -1,0 +1,43 @@
+name: Publish MuJian preview
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mujian-preview.zip'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract prototype
+        run: |
+          test -f mujian-preview.zip || { echo "Upload mujian-preview.zip to repository root first."; exit 1; }
+          mkdir -p _site
+          unzip -q mujian-preview.zip -d _unpacked
+          entry=$(find _unpacked -type f -name index.html -print -quit)
+          test -n "$entry" || { echo "No index.html in zip"; exit 1; }
+          root=$(dirname "$entry")
+          cp -a "$root"/. _site/
+          touch _site/.nojekyll
+          test -f _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
