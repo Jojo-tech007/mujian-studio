@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d0d0b">
+  <meta name="description" content="幕间 MIJIAN — AI 辅助编剧交互原型：从片长与题材出发，生成故事创意、剧本大纲、完整剧本、角色形象与音色、分镜表和制作清单。">
+  <title>幕间 MIJIAN · AI 编剧共创空间</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23151512'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23dca55d' stroke-width='2'/%3E%3Cpath d='M32 15a17 17 0 0 1 0 34' fill='%23dca55d'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme-green.css"></head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" data-action="home" aria-label="幕间首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="13.5" stroke="currentColor" stroke-width="1.2"/>
+          <path d="M20 6.5a13.5 13.5 0 0 1 0 27Z" fill="currentColor" opacity=".85"/>
+          <circle cx="20" cy="20" r="3" fill="#151512"/>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <strong>幕间</strong>
+        <small>MIJIAN STUDIO</small>
+      </span>
+    </a>
+
+    <nav class="stepper" aria-label="创作流程">
+      <button class="step is-active" data-step="setup" type="button">
+        <span class="step-num">01</span>
+        <span class="step-label">故事设定</span>
+      </button>
+      <span class="step-line" aria-hidden="true"></span>
+      <button class="step" data-step="ideas" type="button">
+        <span class="step-num">02</span>
+        <span class="step-label">创意选择</span>
+      </button>
+      <span class="step-line" aria-hidden="true"></span>
+      <button class="step" data-step="outline" type="button">
+        <span class="step-num">03</span>
+        <span class="step-label">剧本大纲</span>
+      </button>
+      <span class="step-line" aria-hidden="true"></span>
+      <button class="step" data-step="production" type="button">
+        <span class="step-num">04</span>
+        <span class="step-label">剧本制作</span>
+      </button>
+    </nav>
+
+    <div class="top-actions">
+      <button class="theme-toggle" type="button" id="themeToggle" data-action="toggle-theme" aria-label="切换明暗主题">☀ 浅色</button>
+      <span class="save-state"><span class="save-dot"></span><span>自动保存</span></span>
+      <button class="topbar-cta" type="button" id="topbarGenerate" data-action="generate">
+        <span>生成创意</span>
+        <svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2.5 7h9M8 3.5 11.5 7 8 10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn" type="button" data-action="reset" title="新建故事" aria-label="新建故事">
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <footer class="site-footer">
+    <span>MUJIAN / STORY DEVELOPMENT PROTOTYPE</span>
+    <span class="footer-rule"></span>
+    <span>让机器推演，让人做决定</span>
+    <span class="footer-year">2026</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="process" class="process-overlay" aria-hidden="true"></div>
+  <div id="modal" class="modal-layer" aria-hidden="true"></div>
+
+  <script src="data.js"></script>
+  <script src="scripts-data.js"></script>
+  <script src="characters-data.js"></script>
+  <script src="production-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

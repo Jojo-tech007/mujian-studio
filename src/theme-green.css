@@ -1,0 +1,26 @@
+/* MuJian v0.3 — AI Animation Studio white / forest green visual system */
+:root[data-theme="light"]{
+ --bg:#f7f8f5;--bg-soft:#f0f3ef;--panel:#ffffff;--panel-2:#f7f9f6;--panel-3:#edf3ed;
+ --paper:#202923;--paper-soft:#39473f;--muted:#65756a;--muted-2:#7b8c80;
+ --line:rgba(39,89,71,.13);--line-strong:rgba(39,89,71,.25);
+ --amber:#275947;--amber-bright:#1d513d;--amber-soft:rgba(39,89,71,.09);
+ --sage:#75a57e;--red:#a44336;
+}
+:root[data-theme="light"] body{background:#f7f8f5;color:#202923}
+:root[data-theme="light"] body::before,:root[data-theme="light"] .grain,:root[data-theme="light"] .ambient{display:none}
+:root[data-theme="light"] ::selection{color:#1c3e2d;background:#cfe8d5}
+:root[data-theme="light"] ::-webkit-scrollbar-track{background:#f3f5f1}
+:root[data-theme="light"] ::-webkit-scrollbar-thumb{background:#c7d6ca;border-color:#f3f5f1}
+:root[data-theme="light"] .topbar{background:rgba(255,255,255,.97);border-bottom:1px solid #e1e8e0;box-shadow:0 2px 12px rgba(30,65,42,.035)}
+:root[data-theme="light"] .brand-mark{color:#275947}
+:root[data-theme="light"] .brief-card,:root[data-theme="light"] .compass-panel{background:#fff;border-color:#e1e8e0;box-shadow:0 5px 22px rgba(30,65,42,.045)}
+:root[data-theme="light"] .hero h1{color:#202923}
+:root[data-theme="light"] .hero h1 em{color:#275947}
+:root[data-theme="light"] .hero h1 em::after{background:#dceadd}
+:root[data-theme="light"] .hero-stamp{opacity:.48}
+:root[data-theme="light"] .topbar-cta{background:#275947;color:#fff;border-color:#275947}
+:root[data-theme="light"] .topbar-cta:hover{background:#1e4837;border-color:#1e4837}
+:root[data-theme="light"] .theme-toggle{background:#f7faf7;border-color:#dfe8df;color:#365b43}
+:root[data-theme="light"] .theme-toggle:hover{background:#e7f0e9}
+:root[data-theme="light"] button:focus-visible,:root[data-theme="light"] a:focus-visible{outline:2px solid #38805a;outline-offset:3px}
+:root[data-theme="light"] .idea-card:hover,:root[data-theme="light"] .idea-card.is-selected{box-shadow:0 6px 22px rgba(39,89,71,.09)}
