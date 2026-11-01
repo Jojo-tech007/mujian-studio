@@ -3,14 +3,14 @@ on:
   push:
     branches: [main]
     paths:
+      - 'src/**'
       - 'mujian-preview.zip'
       - 'mujian-preview.zip.zip'
       - '.github/workflows/pages.yml'
-      - 'theme-green.css'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -26,22 +26,56 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Extract prototype
+        with:
+          persist-credentials: true
+      - name: One-time migration of archived prototype into editable source
+        shell: bash
         run: |
-          archive="mujian-preview.zip"
-          if [ ! -f "$archive" ]; then archive="mujian-preview.zip.zip"; fi
-          test -f "$archive" || { echo "Prototype ZIP missing"; exit 1; }
+          set -euo pipefail
+          if [ ! -f src/index.html ]; then
+            archive="mujian-preview.zip"
+            if [ ! -f "$archive" ]; then archive="mujian-preview.zip.zip"; fi
+            test -f "$archive" || { echo "Prototype archive missing"; exit 1; }
+            mkdir -p _unpacked src
+            unzip -q "$archive" -d _unpacked
+            entry=$(find _unpacked -type f -name index.html -print -quit)
+            test -n "$entry" || { echo "index.html missing from archive"; exit 1; }
+            root=$(dirname "$entry")
+            cp -a "$root"/. src/
+            cp theme-green.css src/theme-green.css
+            python3 - <<'PY'
+          from pathlib import Path
+          html = Path('src/index.html')
+          contents = html.read_text(encoding='utf-8')
+          if 'theme-green.css' not in contents:
+              contents = contents.replace('</head>', '<link rel="stylesheet" href="theme-green.css"></head>', 1)
+          html.write_text(contents, encoding='utf-8')
+          app = Path('src/app.js')
+          if app.exists():
+              app.write_text(app.read_text(encoding='utf-8').replace('mujian-theme-v02', 'mujian-theme-v03'), encoding='utf-8')
+          PY
+            touch src/.nojekyll
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: import editable MuJian frontend sources from original prototype"
+              git push origin HEAD:main
+            fi
+          fi
+      - name: Validate source and prepare Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s src/index.html
+          test -s src/app.js
+          test -s src/styles.css
+          test -s src/theme-green.css
+          grep -q 'theme-green.css' src/index.html
+          grep -q 'mujian-theme-v03' src/app.js
           mkdir -p _site
-          unzip -q "$archive" -d _unpacked
-          entry=$(find _unpacked -type f -name index.html -print -quit)
-          test -n "$entry" || { echo "No index.html in zip"; exit 1; }
-          root=$(dirname "$entry")
-          cp -a "$root"/. _site/
-          cp theme-green.css _site/theme-green.css
-          sed -i 's#</head>#<link rel="stylesheet" href="theme-green.css"></head>#' _site/index.html
-          sed -i "s/mujian-theme-v02/mujian-theme-v03/g" _site/app.js
+          cp -a src/. _site/
           touch _site/.nojekyll
-          test -f _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
