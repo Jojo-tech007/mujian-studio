@@ -238,3 +238,142 @@
  :root[data-theme="light"] .idea-logline {font-size:14px}
  :root[data-theme="light"] .selection-dock {width:calc(100% - 24px)}
 }
+
+/* v0.7 — site-wide type and surface audit, USWDS-style readable scale.
+   Role text: 16px body; 14px supporting; 12px only short auxiliary marks.
+   All named application stages, overlays, dialogs and bottom action surfaces. */
+:root[data-theme="light"] {
+ --ui-text:#233a2a;--ui-muted:#465d4d;
+ --ui-bg:#f7f8f5;--ui-card:#fff;--ui-line:#d5e1d8;
+}
+:root[data-theme="light"] body {font-size:16px;line-height:1.65}
+:root[data-theme="light"] button,
+:root[data-theme="light"] input,
+:root[data-theme="light"] select,
+:root[data-theme="light"] textarea {font-family:var(--sans);letter-spacing:normal}
+:root[data-theme="light"] :where(.field-title p,.field-value,.genre-hint,.generate-note,.production-tagline,.outline-note p,.production-logline,.manifest-panel li,.delivery-list span,.cast-footnote p,.cover-note,.screenplay-action,.screenplay-dialogue p,.screenplay-heading p,.shot-desc,.shot-dialogue p,.character-design-grid p,.voice-facts p,.analysis-copy,.analysis-sub p,.diag-block li,.growth-step p,.char-fact dd,.manifest-hero-copy p,.next-copy p) {
+ font-size:16px;line-height:1.75;font-weight:400;
+}
+:root[data-theme="light"] :where(.field-title h3,.section-heading h2,.scene-main h3,.shot-body h3,.storyboard-scene-head h3,.analysis-sub h4,.manifest-panel h3,.character-name-row h2,.cast-intro h2,.script-cover h2) {
+ font-size:clamp(19px,1.65vw,25px);line-height:1.45;font-weight:600;
+}
+:root[data-theme="light"] :where(.field-num,.field-value,.field-title p,.genre-hint,.tone-option span,.compass-row,.kpi-meta,.storyboard-stats span,.shot-meta,.shot-tech,.manifest-panel li span,.manifest-stat small,.outline-meta,.scene-no,.scene-meta,.scene-detail dt,.scene-detail dd,.act-num small,.act-time,.act-title-wrap p,.analysis-sub p,.char-fact dt,.script-index-item,.script-stats span,.screenplay-heading p,.cover-meta,.voice-facts span,.vm-label,.process-status,.process-steps li,.modal-card p,.site-footer) {
+ letter-spacing:normal;
+}
+:root[data-theme="light"] .field-title p,
+:root[data-theme="light"] .field-value,
+:root[data-theme="light"] .genre-hint,
+:root[data-theme="light"] .generate-note,
+:root[data-theme="light"] .compass-row,
+:root[data-theme="light"] .outline-meta,
+:root[data-theme="light"] .storyboard-stats span,
+:root[data-theme="light"] .manifest-panel li span,
+:root[data-theme="light"] .kpi-meta,
+:root[data-theme="light"] .cover-meta,
+:root[data-theme="light"] .cast-footnote p {font-size:14px;color:#465d4d;line-height:1.65}
+:root[data-theme="light"] .step-num,
+:root[data-theme="light"] .step-label,
+:root[data-theme="light"] .eyebrow,
+:root[data-theme="light"] .kicker,
+:root[data-theme="light"] .compass-top,
+:root[data-theme="light"] .rail-head .kicker,
+:root[data-theme="light"] .section-heading .kicker,
+:root[data-theme="light"] .production-tab .pt-en {font-size:12px;letter-spacing:.035em;font-weight:650}
+:root[data-theme="light"] .step-label {font-size:13px}
+:root[data-theme="light"] .duration-option .dur-desc {font-size:14px}
+:root[data-theme="light"] .genre-chip {font-size:15px}
+:root[data-theme="light"] .tone-option strong {font-size:16px}
+:root[data-theme="light"] .orbit-core span {font-size:12px;color:#d7e8d9;letter-spacing:.02em}
+:root[data-theme="light"] .orbit-label {font-size:12px;color:#486454;font-weight:650}
+:root[data-theme="light"] .orbit-core strong {font-size:27px;color:#f1fff2}
+:root[data-theme="light"] .idea-card .analysis-row dt,
+:root[data-theme="light"] .idea-card .score-label,
+:root[data-theme="light"] .idea-card .analysis-flag {font-size:13px;color:#d1e3d5}
+:root[data-theme="light"] .idea-card .analysis-row dd {font-size:14px;color:#e2efe3}
+:root[data-theme="light"] .idea-card .idea-hook {font-size:15px;line-height:1.65}
+:root[data-theme="light"] .idea-card .pick-hint {font-size:14px}
+:root[data-theme="light"] .idea-card .poster-credit,
+:root[data-theme="light"] .idea-card .poster-no {font-size:12px;color:#e3ece7}
+:root[data-theme="light"] .selection-dock .dock-title {font-size:16px;color:#233e2a}
+:root[data-theme="light"] .selection-dock .dock-meta {font-size:13px;color:#47614e}
+:root[data-theme="light"] .scene-meta {font-size:14px;color:#b9d9c2}
+:root[data-theme="light"] .scene-no {font-size:13px;color:#b1daba}
+:root[data-theme="light"] .act-num span {font-size:13px;color:#d1e9d6}
+:root[data-theme="light"] .act-num small {font-size:12px;color:#bbd6c1}
+:root[data-theme="light"] .act-time {font-size:13px;color:#c6ddca}
+:root[data-theme="light"] .act-title-wrap p {font-size:14px;color:#c6ddca}
+:root[data-theme="light"] .act .scene-meta {font-weight:550}
+:root[data-theme="light"] .scene-detail dt {font-size:13px;color:#b4d3bc}
+:root[data-theme="light"] .scene-detail dd {font-size:14px;color:#ebf3ea}
+:root[data-theme="light"] .analysis-panel .kicker,
+:root[data-theme="light"] .analysis-panel .core-label,
+:root[data-theme="light"] .analysis-panel .metric-cell span,
+:root[data-theme="light"] .analysis-panel .analysis-status {font-size:13px;color:#c6dfcd}
+:root[data-theme="light"] .analysis-panel .analysis-copy,
+:root[data-theme="light"] .analysis-panel .analysis-sub p,
+:root[data-theme="light"] .analysis-panel .diag-block li {font-size:15px;color:#e0ebe1}
+:root[data-theme="light"] .analysis-panel .analysis-tab {font-size:14px}
+:root[data-theme="light"] .next-chapter {
+ background:linear-gradient(115deg,#e9f3ec,#f8fbf8);
+ border:1px solid #cbded0;
+ box-shadow:0 8px 23px rgba(30,77,48,.07);
+}
+:root[data-theme="light"] .next-chapter::before {opacity:.07}
+:root[data-theme="light"] .next-copy .kicker {color:#356445;font-size:12px}
+:root[data-theme="light"] .next-copy h2 {color:#1e3c29;font-size:clamp(24px,2.2vw,30px);font-weight:650}
+:root[data-theme="light"] .next-copy p {color:#45624f;font-size:15px;line-height:1.75}
+:root[data-theme="light"] .next-chapter .ghost-btn {color:#275947;border-color:#b6d0be;background:#fff}
+:root[data-theme="light"] .next-chapter .primary-btn {background:#275947;color:#fff;border-radius:12px;font-size:15px;font-weight:650}
+:root[data-theme="light"] .production-tab .pt-main {font-size:16px;font-weight:650}
+:root[data-theme="light"] .production-tab .pt-count {font-size:13px}
+:root[data-theme="light"] .script-rail .rail-count {font-size:13px;color:#d3ead9}
+:root[data-theme="light"] .script-rail .script-index-item {padding-block:12px}
+:root[data-theme="light"] .script-rail .si-no {font-size:13px;color:#c6dfca}
+:root[data-theme="light"] .script-rail .si-main b {font-size:14px;line-height:1.5}
+:root[data-theme="light"] .script-rail .si-main small {font-size:13px;line-height:1.55}
+:root[data-theme="light"] .script-rail .script-stats span {font-size:13px;color:#d1e5d3}
+:root[data-theme="light"] .script-rail .rail-export {font-size:14px;min-height:40px}
+:root[data-theme="light"] .screenplay-action,
+:root[data-theme="light"] .screenplay-dialogue p {font-size:17px;line-height:1.95;color:#29382e}
+:root[data-theme="light"] .screenplay-heading h3 {font-size:18px;color:#253e2c}
+:root[data-theme="light"] .screenplay-heading p {font-size:14px;color:#556958}
+:root[data-theme="light"] .character-card .character-design-grid span,
+:root[data-theme="light"] .character-card .voice-facts span {font-size:13px;color:#cde5d3}
+:root[data-theme="light"] .character-card .character-design-grid p,
+:root[data-theme="light"] .character-card .voice-facts p {font-size:15px;color:#e3eee4}
+:root[data-theme="light"] .shot-card .shot-desc,
+:root[data-theme="light"] .shot-card .shot-dialogue p {font-size:15px;color:#e3f0e5}
+:root[data-theme="light"] .shot-card .shot-meta {font-size:13px;color:#c6dec9}
+:root[data-theme="light"] .shot-card .shot-tech {font-size:13px;color:#c9dfcc}
+:root[data-theme="light"] .manifest-hero-copy p,
+:root[data-theme="light"] .risk-card li,
+:root[data-theme="light"] .manifest-panel li {font-size:15px;line-height:1.75}
+:root[data-theme="light"] .process-overlay {background:rgba(18,30,21,.65)}
+:root[data-theme="light"] .process-card {
+ background:linear-gradient(160deg,#f9fcf9,#edf5ee);
+ color:#203b28;border:1px solid #adcbb5;
+ box-shadow:0 20px 72px rgba(15,40,23,.22);
+}
+:root[data-theme="light"] .process-card h2 {color:#203d29;font-size:clamp(25px,2.4vw,32px);font-weight:650;line-height:1.45}
+:root[data-theme="light"] .process-kicker {font-size:13px;letter-spacing:.03em;color:#426c4e}
+:root[data-theme="light"] .process-status {color:#285e3a;font-size:15px;line-height:1.6}
+:root[data-theme="light"] .process-steps li {color:#496450;font-size:14px;line-height:1.65}
+:root[data-theme="light"] .process-steps li.is-active {color:#1d4c2e;font-weight:650}
+:root[data-theme="light"] .process-steps li.is-done {color:#2e6d42}
+:root[data-theme="light"] .process-steps li .p-dot {border-color:#96b8a0}
+:root[data-theme="light"] .process-progress {height:6px;background:#dce8de}
+:root[data-theme="light"] .process-progress i {background:#2c7446}
+:root[data-theme="light"] .process-skip {font-size:14px;color:#356346}
+:root[data-theme="light"] .process-orbit {opacity:.65}
+:root[data-theme="light"] .modal-card {background:#fff;color:#24432e;border-color:#ccded0}
+:root[data-theme="light"] .modal-card .kicker {font-size:13px}
+:root[data-theme="light"] .modal-card h2 {font-size:26px;color:#203b28}
+:root[data-theme="light"] .modal-card p,
+:root[data-theme="light"] .modal-points li {font-size:16px;color:#435d49;line-height:1.75}
+:root[data-theme="light"] .toast {font-size:14px}
+@media(max-width:780px){
+ :root[data-theme="light"] .process-card {padding:28px 22px}
+ :root[data-theme="light"] .next-chapter {flex-wrap:wrap;gap:18px}
+ :root[data-theme="light"] .next-actions {width:100%;flex-wrap:wrap}
+ :root[data-theme="light"] .next-actions .primary-btn {flex:1}
+}
